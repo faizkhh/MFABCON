@@ -234,12 +234,11 @@ body {
   .header-actions .phone { display:none; }
   .cards-grid { grid-template-columns: 1fr; }
 }
-/* ================= HERO SLIDESHOW ================= */
-/* ================= HERO SLIDESHOW ================= */
+/* ================= HERO SLIDESHOW =/* ================= HERO SLIDESHOW ================= */
 .hero-slideshow {
   position: relative;
   width: 100%;
-  height: 65vh; /* compact height */
+  height: 75vh; /* Slightly taller for premium impact */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -247,28 +246,26 @@ body {
   overflow: hidden;
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
 }
 
-/* Background slideshow animation */
+/* Background slideshow with smooth fade animation */
 .hero-slideshow::before {
   content: "";
   position: absolute;
   inset: 0;
   background-size: cover;
   background-position: center;
-  animation: slideshow 18s infinite;
+  animation: slideshow 18s infinite linear;  /* 🔹Smooth linear animation */
   z-index: 0;
-  transition: background-image 1s ease-in-out;
-  border-radius: 12px;
 }
 
-/* Compact overlay */
+/* Softer and cinematic overlay */
 .slideshow-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.4));
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4));
   z-index: 1;
-  border-radius: 12px;
 }
 
 /* Content Styling */
@@ -281,7 +278,7 @@ body {
 }
 
 .slideshow-content h1 {
-  font-size: 2.8rem;
+  font-size: 3.2rem;
   letter-spacing: 2px;
   font-weight: 700;
   margin-bottom: 10px;
@@ -293,21 +290,18 @@ body {
 }
 
 .slideshow-content .tagline {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 500;
-  letter-spacing: 1px;
-  color: #f5f5f5;
   margin-bottom: 15px;
 }
 
 .slideshow-content .description {
-  font-size: 1.05rem;
-  color: #e0e0e0;
+  font-size: 1.1rem;
   margin-bottom: 25px;
   line-height: 1.6;
 }
 
-/* CTA Buttons */
+/* CTA Buttons - Modern Glass & Solid */
 .hero-cta {
   display: flex;
   justify-content: center;
@@ -315,30 +309,37 @@ body {
 }
 
 .btn {
-  padding: 12px 28px;
+  padding: 12px 30px;
   font-size: 1rem;
   border-radius: 30px;
   text-decoration: none;
+  font-weight: 600;
   transition: all 0.3s ease;
-  font-weight: 500;
+  display: inline-block;
 }
 
+/* Gold Primary Button */
 .btn-primary {
-  background: #ffcc00;
+  background: linear-gradient(135deg, #ffcc00, #ffb300);
   color: #1a1a1a;
+  box-shadow: 0 4px 15px rgba(255, 204, 0, 0.4);
 }
 
 .btn-primary:hover {
-  background: #e6b800;
+  background: linear-gradient(135deg, #e6b800, #d9a300);
+  box-shadow: 0 6px 20px rgba(255, 204, 0, 0.6); /* Stronger glow on hover */
 }
 
+/* Glass Button */
 .btn-outline {
-  border: 2px solid #fff;
+  border: 2px solid rgba(255, 255, 255, 0.6);
   color: #fff;
+  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .btn-outline:hover {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.9);
   color: #000;
 }
 
@@ -352,6 +353,23 @@ body {
   }
   67%, 100% {
     background-image: url('../images/hero3.jpg');
+  }
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+  .hero-slideshow {
+    height: 60vh;
+  }
+  .slideshow-content h1 {
+    font-size: 2.2rem;
+  }
+  .slideshow-content .tagline,
+  .slideshow-content .description {
+    font-size: 1rem;
+  }
+  .btn {
+    padding: 10px 24px;
   }
 }
 
@@ -507,6 +525,7 @@ body {
 }
 
 /* ================= SERVICES SECTION ================= */
+
 .services-main {
   background: #f8f9fb;
   padding: 80px 20px;
@@ -1334,6 +1353,72 @@ header {
   }
 /* caret rotation still applies via .open class */
 }
+
+/* Slider container */
+/* Slider container */
+.slider-wrapper {
+  overflow: hidden;
+  width: 100%;
+  padding: 40px 0;
+  position: relative;
+}
+
+/* Track that moves continuously */
+.slider-track {
+  display: flex;
+  gap: 40px;
+  animation: slideLoop 20s linear infinite;
+}
+
+/* Individual slides */
+.slide {
+  flex: 0 0 auto;
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.5s ease;
+}
+
+.slide img {
+  width: 100%;
+  display: block;
+  filter: grayscale(20%);
+  transition: transform 0.5s ease, filter 0.3s ease;
+}
+
+/* Zoom effect for center slide */
+.slide.active img {
+  transform: scale(1.2);
+  filter: grayscale(0%);
+}
+
+.slide img:hover {
+  filter: grayscale(0%);
+}
+
+/* Section styling */
+.certifications-section, .partners-slider {
+  text-align: center;
+  padding: 60px 0;
+}
+
+.certifications-section h2, .partners-slider h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+/* Infinite scroll keyframes */
+@keyframes slideLoop {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* adjust to slide halfway for smooth loop */
+}
+
+
+
+
+
 
 
 

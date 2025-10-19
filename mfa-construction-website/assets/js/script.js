@@ -128,3 +128,32 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+function setupZoomCarousel(sliderClass, interval = 1500) {
+  const sliderWrapper = document.querySelector(`.${sliderClass} .slider-wrapper`);
+  const track = sliderWrapper.querySelector('.slider-track');
+  const slides = track.querySelectorAll('.slide');
+  const slideWidth = slides[0].offsetWidth + 40; // slide width + margin
+  let index = 0;
+
+  // Set first slide active
+  slides[index].classList.add('active');
+
+  setInterval(() => {
+    // Remove active class
+    slides.forEach(slide => slide.classList.remove('active'));
+
+    // Move to next slide
+    index = (index + 1) % slides.length;
+
+    // Add active class to center slide
+    slides[index].classList.add('active');
+
+    // Move track
+    track.style.transform = `translateX(-${index * slideWidth}px)`;
+  }, interval);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  setupZoomCarousel('certSlider', 1500);
+  setupZoomCarousel('partnerSlider', 1500);
+});
