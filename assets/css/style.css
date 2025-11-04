@@ -356,11 +356,11 @@ body {
 /* Smooth Image Transition */
 @keyframes slideshow {
   0%, 33% {
-    background-image: url('../images/hero1.jpg');
+    background-image: url('../images/hero9.jpg');
     transform: scale(1.05);
   }
   34%, 66% {
-    background-image: url('../images/hero2.jpg');
+    background-image: url('../images/hero8.jpg');
     transform: scale(1.05);
   }
   67%, 100% {

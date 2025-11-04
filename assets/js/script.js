@@ -24,8 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 // Hero Background Slideshow
 const slideshowImages = [
-  "assets/images/hero1.jpg",
-  "assets/images/hero2.jpg",
+  "assets/images/hero9.jpg",
+  "assets/images/hero8.jpg",
   "assets/images/hero3.jpg"
 ];
 
