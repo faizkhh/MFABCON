@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Artwork at Diriyah Seasons – Riyadh | MFABCON</title>
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Lightbox & Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" />
+
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      background: #f4f4f4;
+      color: #333;
+    }
+
+    .project-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 60px 25px;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 30px;
+      background: #222;
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background: #d99000;
+      transform: translateX(-3px);
+    }
+
+    .project-header h1 {
+      text-align: center;
+      font-size: 34px;
+      font-weight: 700;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .project-details {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+      margin-bottom: 50px;
+      text-align: center;
+      line-height: 1.7;
+    }
+
+    .project-details p {
+      margin: 8px 0;
+      font-size: 17px;
+    }
+
+    .project-details strong {
+      color: #000;
+      font-weight: 600;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery a {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      display: block;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .gallery a:hover img {
+      transform: scale(1.06);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="project-container">
+
+    <a href="../../projects.html" class="back-btn"><i class="fa fa-arrow-left"></i></a>
+
+    <div class="project-header">
+      <h1>Artwork at Diriyah Seasons</h1>
+    </div>
+
+    <div class="project-details">
+      <p><strong>Scope of Work:</strong> Complete design, finishing, supply, installation, and MEP services for the Artwork at Diriyah Seasons.</p>
+      <p><strong>Location:</strong> Riyadh, Saudi Arabia</p>
+      <p><strong>Completion Date:</strong> 2025</p>
+    </div>
+
+    <div class="gallery">
+      <a href="artwork/art1.png" data-lightbox="diriyah-artwork"><img src="artwork/art1.png"></a>
+      <a href="artwork/art2.png" data-lightbox="diriyah-artwork"><img src="artwork/art2.png"></a>
+      <a href="artwork/art3.png" data-lightbox="diriyah-artwork"><img src="artwork/art3.png"></a>
+      <a href="artwork/art4.png" data-lightbox="diriyah-artwork"><img src="artwork/art4.png"></a>
+      <a href="artwork/art5.png" data-lightbox="diriyah-artwork"><img src="artwork/art5.png"></a>
+      <a href="artwork/art6.png" data-lightbox="diriyah-artwork"><img src="artwork/art6.png"></a>
+    </div>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
+</body>
+</html>
