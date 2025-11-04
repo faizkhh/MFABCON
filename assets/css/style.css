@@ -369,6 +369,9 @@ body {
   }
 }
 
+
+
+
 /* Fade-up animation for text */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(25px); }
@@ -1000,34 +1003,71 @@ header {
 }
 
 /* ==== Responsive Menu for Mobile ==== */
+/* ==== Responsive Menu for Mobile ==== */
 @media (max-width: 768px) {
   .site-nav {
-    justify-content: space-between;
+    position: relative;
   }
 
   .nav-toggle {
     display: block;
     color: #222;
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
   }
 
-  .site-nav ul {
+  /* Main nav list (hidden initially) */
+  .site-nav > ul {
     position: absolute;
-    top: 70px;
-    right: 0;
+    top: 60px; /* just below header/hamburger */
+    left: 0;   /* align to left */
     background: #ffffff;
     flex-direction: column;
-    width: 100%;
-    text-align: center;
-    padding: 20px 0;
-    gap: 20px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    align-items: flex-start; /* align links to left */
+    width: 220px; /* dropdown width */
+    padding: 10px 0;
+    gap: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-radius: 6px;
     display: none;
+    z-index: 1000;
   }
 
-  .site-nav ul.show {
+  /* Show only when nav is open */
+  .site-nav.open > ul {
+    display: flex;
+  }
+
+  /* Style for each link */
+  .site-nav ul li {
+    width: 100%;
+  }
+
+  .site-nav ul li a {
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    text-align: left;
+    color: #222;
+  }
+
+  /* Hide dropdowns by default */
+  .dropdown .dropdown-menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #f9f9f9;
+    padding-left: 15px;
+  }
+
+  /* Dropdown toggle on tap (optional JS below) */
+  .dropdown .dropdown-menu.show {
     display: flex;
   }
 }
+
 
 /* ==== CONTACT PAGE ==== */
 .contact-hero {
