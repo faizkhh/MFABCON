@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 // Hero Background Slideshow
+// Hero Background Slideshow
 const slideshowImages = [
   "assets/images/hero9.jpg",
   "assets/images/hero8.jpg",
@@ -34,13 +35,16 @@ const heroSection = document.querySelector(".hero-slideshow");
 
 function changeSlide() {
   heroSection.style.backgroundImage = `url('${slideshowImages[currentSlide]}')`;
+  heroSection.style.backgroundSize = "cover";
+  heroSection.style.backgroundPosition = "center";
   currentSlide = (currentSlide + 1) % slideshowImages.length;
 }
 
 if (heroSection) {
   changeSlide();
-  setInterval(changeSlide, 3000);
+  setInterval(changeSlide, 5000); // smoother timing (5s)
 }
+
 // --- About Tabs Functionality ---
 document.addEventListener("DOMContentLoaded", () => {
   const tabs = document.querySelectorAll(".about-tabs li");

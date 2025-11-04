@@ -270,6 +270,32 @@ body {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.45));
   z-index: 1;
 }
+/* ==== HERO SLIDESHOW SECTION ==== */
+.hero-slideshow {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full screen height */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 1s ease-in-out, transform 1s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Dark overlay for contrast */
+.slideshow-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.55);
+  z-index: 1;
+}
 
 /* Hero Text Content */
 .slideshow-content {
@@ -353,21 +379,51 @@ body {
   transform: translateY(-2px);
 }
 
-/* Smooth Image Transition */
-@keyframes slideshow {
-  0%, 33% {
-    background-image: url('../images/hero9.jpg');
-    transform: scale(1.05);
+/* ==== FADE ANIMATION ==== */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
   }
-  34%, 66% {
-    background-image: url('../images/hero8.jpg');
-    transform: scale(1.05);
-  }
-  67%, 100% {
-    background-image: url('../images/hero3.jpg');
-    transform: scale(1.05);
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
+
+/* ==== MOBILE RESPONSIVE ==== */
+@media (max-width: 768px) {
+  .hero-slideshow {
+    height: 90vh; /* Slightly smaller on mobile */
+    background-position: center top;
+  }
+
+  .slideshow-content h1 {
+    font-size: 2rem;
+    line-height: 1.3;
+  }
+
+  .slideshow-content .tagline {
+    font-size: 1rem;
+  }
+
+  .slideshow-content .description {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn {
+    width: auto;
+    padding: 12px 28px;
+    font-size: 0.95rem;
+  }
+}
+
 
 
 
