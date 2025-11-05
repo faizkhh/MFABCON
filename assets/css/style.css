@@ -52,7 +52,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 60px 20px;
-  background-image: url('assets/images/about-hero-bg.jpg'); /* Replace with your background */
+  background-image: url('../assets/images/1.jpg');
   background-size: cover;
   background-position: center;
   color: #fff;
@@ -896,7 +896,7 @@ body {
 
 /* ===== Hero Section (Optional enhancement) ===== */
 .hero.about-hero {
-  background: url('assets/images/services-banner.jpg') center/cover no-repeat;
+  background: url('assets/images/mfa.jpg') center/cover no-repeat;
   padding: 140px 20px;
   position: relative;
 }
@@ -1669,3 +1669,154 @@ header {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
+
+
+
+/* About-section-health quality and assurance */
+
+#health-safety {
+  padding: 80px 20px;
+  background-color: #f9f9f9;
+}
+
+#health-safety h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #222;
+}
+
+#health-safety p {
+  color: #555;
+  line-height: 1.7;
+}
+
+.assurance-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.assurance-item {
+  background: #fff;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.assurance-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+}
+
+.assurance-item h3 {
+  color: #005baa;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+
+
+/* Services-section-maintaince-css */
+
+/* Maintenance & Renovation Section */
+#maintenance {
+  padding: 90px 20px;
+  background-color: #f9f9fb;
+}
+
+.maintenance-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 50px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.maintenance-text {
+  animation: fadeUp 1.2s ease;
+}
+
+.maintenance-text h2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #0a1a3c;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.maintenance-text h2::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 3px;
+  background: #0078d7;
+  margin-top: 10px;
+  border-radius: 2px;
+}
+
+.maintenance-text p {
+  color: #444;
+  font-size: 1.05rem;
+  line-height: 1.9;
+  margin-bottom: 18px;
+  text-align: justify;
+  max-width: 95%;
+}
+
+.maintenance-text strong {
+  color: #0078d7;
+}
+
+.maintenance-image {
+  text-align: center;
+}
+
+.maintenance-image img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.maintenance-image img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .maintenance-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .maintenance-text h2 {
+    font-size: 2rem;
+  }
+
+  .maintenance-image img {
+    max-width: 320px;
+    margin-top: 30px;
+  }
+}
+
+
+
