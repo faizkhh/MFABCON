@@ -24,14 +24,14 @@
           Services
           <span class="arrow"></span>
         </a>
-        <!-- <ul class="dropdown-menu">
+        <ul class="dropdown-menu">
           <li><a href="#construction">General Construction</a></li>
-          <li><a href="#fabrication">Steel Fabrication & Metal Works</a></li>
-          <li><a href="#hvac">HVAC & MEP Services</a></li>
-          <li><a href="#civil">Civil & Architectural Works</a></li>
-          <li><a href="#maintenance">Maintenance & Renovation</a></li>
+          <li><a href="#Workforce">Workforce & Expertise</a></li>
+          <li><a href="#project-Capabilities">Turnkey project-Capabilities</a></li>
+          <li><a href="#project-delivery">Engineering & Project Delivery</a></li>
+          <!-- <li><a href="#maintenance">Maintenance & Renovation</a></li> -->
         </ul>
-      </li> -->
+      </li>
 
       <li><a href="projects.html">Projects</a></li>
       <li><a href="contact.html">Contact</a></li>
@@ -47,6 +47,99 @@
     <p>Comprehensive construction, engineering, and project delivery solutions with excellence and reliability.</p>
   </div>
 </section>
+
+<style>
+/* ------------ Hero Section Styling ------------ */
+.hero.about-hero {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('assets/images/services1.jpg') center center/cover no-repeat; /* Change to your image path */
+  overflow: hidden;
+  border-bottom: 4px solid #d99000; /* Accent border for a premium touch */
+}
+
+/* Overlay for readability */
+.hero-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.55); /* Dark overlay for contrast */
+  z-index: 1;
+}
+
+/* Centered text content */
+.hero-content-center {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+  padding: 0 20px;
+  max-width: 900px;
+  animation: fadeUp 1.5s ease;
+}
+
+/* Heading */
+.hero-content-center h1 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+}
+
+/* Subheading */
+.hero-content-center p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #f1f1f1;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Fade animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ------------ Responsive Adjustments ------------ */
+@media (max-width: 992px) {
+  .hero.about-hero {
+    height: 60vh;
+  }
+
+  .hero-content-center h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero.about-hero {
+    height: 55vh;
+  }
+
+  .hero-content-center h1 {
+    font-size: 1.9rem;
+  }
+
+  .hero-content-center p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+}
+</style>
+
 
 <!-- Services Section -->
 <section class="services-main">
@@ -111,7 +204,7 @@
       </div>
     </div>
 
-    <h2 class="section-title">Workforce & Expertise</h2>
+    <h2 id="Workforce" class="section-title" >Workforce & Expertise</h2>
     <div class="workforce-grid">
       <div class="work-card">Foremen / Lead Men</div>
       <div class="work-card">Masons & Tile Fixers</div>
@@ -125,7 +218,7 @@
       <div class="work-card">Surveyors / Operators / Drivers</div>
     </div>
 
-    <h2 class="section-title">Turnkey Project Capabilities</h2>
+    <h2  id="project-Capabilities"class="section-title">Turnkey Project Capabilities</h2>
     <div class="services-grid">
       <div class="service-card"><h4>Industrial Projects</h4></div>
       <div class="service-card"><h4>Telecommunication Infrastructure</h4></div>
@@ -135,7 +228,7 @@
       <div class="service-card"><h4>Sewage Treatment Plants</h4></div>
     </div>
 
-    <h2 class="section-title">Engineering & Project Delivery</h2>
+    <h2 id="project-delivery" class="section-title">Engineering & Project Delivery</h2>
     <div class="services-grid">
       <div class="service-card"><h4>Feasibility Studies</h4></div>
       <div class="service-card"><h4>Engineering Design</h4></div>
