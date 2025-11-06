@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
   ];
 
   const slideshowQuotes = [
-    "Building the future, restoring the past.",
+    "Delivering safe, sustainable, and high-quality construction solutions across the Middle East.",
     "Excellence in every beam, precision in every brick.",
     "Strong foundations for a stronger tomorrow."
   ];
