@@ -1,5 +1,35 @@
 /* ---------- Reset & Base ---------- */
-* { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* --- Global Font Import --- */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600;700&display=swap');
+
+/* --- Global Reset & Base Styles --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #223043;
+  background: #f7f9fb;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+}
+
+/* Optional — Ensures all major text elements use Lato */
+h1, h2, h3, h4, h5, h6, p, a, button {
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+
+/* * { box-sizing: border-box; margin: 0; padding: 0; }
 html,body { height: 100%; }
 body {
   font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
@@ -8,7 +38,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.5;
-}
+} */
 
 .container {
   width: 92%;
@@ -1818,5 +1848,66 @@ header {
   }
 }
 
+/* contact-section-bgimage adding */
+/* --- Contact Hero Section --- */
+.contact-hero {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  background-image: url('../images/contactbg.jpg'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+/* Overlay for dark shade */
+.contact-hero .hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* dark overlay */
+  z-index: 1;
+}
+
+/* Text styling */
+.contact-hero .hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.contact-hero .hero-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.contact-hero .hero-content p {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.contact-info p {
+  margin-bottom: 20px; /* adds space below the paragraph */
+}
 
 
+
+
+
+#formStatus {
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}

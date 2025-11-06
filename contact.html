@@ -62,21 +62,80 @@
       <!-- Contact Form -->
       <div class="contact-form">
         <h2>Send us a Message</h2>
-        <form action="#" method="POST">
-          <div class="form-group">
-            <input type="text" name="name" placeholder="Your Name" required>
-          </div>
-          <div class="form-group">
-            <input type="email" name="email" placeholder="Your Email" required>
-          </div>
-          <div class="form-group">
-            <input type="text" name="subject" placeholder="Subject" required>
-          </div>
-          <div class="form-group">
-            <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary">Send Message</button>
-        </form>
+
+        <form id="contactForm" action="https://formspree.io/f/xgvpgzja" method="POST">
+  <!-- <input type="hidden" name="_subject" value="New Contact Form Submission"> -->
+
+  <div class="form-group">
+    <input type="text" name="name" placeholder="Your Name" required>
+  </div>
+  <div class="form-group">
+    <input type="email" name="email" placeholder="Your Email" required>
+  </div>
+  <div class="form-group">
+    <input type="text" name="subject" placeholder="Subject" required>
+  </div>
+  <div class="form-group">
+    <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Send Message</button>
+</form>
+
+<!-- Message Display -->
+<p id="formStatus" style="
+  margin-top:10px;
+  font-weight:500;
+  transition: opacity 0.5s ease;
+"></p>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  const form = e.target;
+  const formData = new FormData(form);
+  const status = document.getElementById("formStatus");
+
+  try {
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+      status.style.color = "green";
+      status.style.opacity = "1";
+      status.innerHTML = "✅ Thank you! Your message has been sent successfully.";
+
+      // Reset form
+      form.reset();
+
+      // Hide message after 3 seconds
+      setTimeout(() => {
+        status.style.opacity = "0";
+      }, 3000);
+    } else {
+      // Try to parse any error message from Formspree
+      const data = await response.json();
+      throw new Error(data.error || "Unknown error");
+    }
+
+  } catch (error) {
+    status.style.color = "red";
+    status.style.opacity = "1";
+    status.innerHTML = "❌ Oops! Something went wrong. Please try again later.";
+
+    // Hide message after 3 seconds
+    setTimeout(() => {
+      status.style.opacity = "0";
+    }, 3000);
+  }
+});
+</script>
+
+
+
       </div>
     </div>
   </section>
@@ -107,6 +166,10 @@
         <h4>Quick Links</h4>
         <ul class="footer-links">
           <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <!-- <li><a href="services.html">Services</a></li> -->
+          <li><a href="projects.html">Projects</a></li>
+          <!-- <li><a href="contact.html">Contact</a></li> -->
           <li><a href="services.html">Services</a></li>
         </ul>
       </div>
