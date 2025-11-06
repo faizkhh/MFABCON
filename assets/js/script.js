@@ -23,7 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 // Hero Background Slideshow
-// Hero Background Slideshow
 const slideshowImages = [
   "assets/images/hero9.jpg",
   "assets/images/hero8.jpg",
@@ -33,17 +32,32 @@ const slideshowImages = [
 let currentSlide = 0;
 const heroSection = document.querySelector(".hero-slideshow");
 
+// Preload images first
+function preloadImages(images, callback) {
+  let loaded = 0;
+  images.forEach((src) => {
+    const img = new Image();
+    img.src = src;
+    img.onload = () => {
+      loaded++;
+      if (loaded === images.length) callback(); // start slideshow only after all are loaded
+    };
+  });
+}
+
+// Change slides instantly (no fade)
 function changeSlide() {
   heroSection.style.backgroundImage = `url('${slideshowImages[currentSlide]}')`;
-  heroSection.style.backgroundSize = "cover";
-  heroSection.style.backgroundPosition = "center";
   currentSlide = (currentSlide + 1) % slideshowImages.length;
 }
 
 if (heroSection) {
-  changeSlide();
-  setInterval(changeSlide, 5000); // smoother timing (5s)
+  preloadImages(slideshowImages, () => {
+    changeSlide(); // show first image immediately
+    setInterval(changeSlide, 5000); // change every 5s
+  });
 }
+
 
 // --- About Tabs Functionality ---
 document.addEventListener("DOMContentLoaded", () => {
