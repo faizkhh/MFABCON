@@ -23,40 +23,54 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 // Hero Background Slideshow
-const slideshowImages = [
-  "assets/images/hero9.jpg",
-  "assets/images/hero8.jpg",
-  "assets/images/hero3.jpg"
-];
+document.addEventListener("DOMContentLoaded", function () {
+  const slideshowImages = [
+    "assets/images/hero9.jpg",
+    "assets/images/hero8.jpg",
+    // "assets/images/mfa.jpg",
+    "assets/images/services1.jpg"
+  ];
 
-let currentSlide = 0;
-const heroSection = document.querySelector(".hero-slideshow");
+  const slideshowQuotes = [
+    "Building the future, restoring the past.",
+    "Excellence in every beam, precision in every brick.",
+    "Strong foundations for a stronger tomorrow."
+  ];
 
-// Preload images first
-function preloadImages(images, callback) {
-  let loaded = 0;
-  images.forEach((src) => {
-    const img = new Image();
-    img.src = src;
-    img.onload = () => {
-      loaded++;
-      if (loaded === images.length) callback(); // start slideshow only after all are loaded
-    };
-  });
-}
+  let currentSlide = 0;
+  const heroSection = document.querySelector(".hero-slideshow");
+  const quoteElement = document.querySelector(".hero-slideshow .description");
 
-// Change slides instantly (no fade)
-function changeSlide() {
-  heroSection.style.backgroundImage = `url('${slideshowImages[currentSlide]}')`;
-  currentSlide = (currentSlide + 1) % slideshowImages.length;
-}
+  // ✅ Preload all images first to avoid blank screen
+  function preloadImages(images, callback) {
+    let loaded = 0;
+    images.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+      img.onload = () => {
+        loaded++;
+        if (loaded === images.length) callback();
+      };
+    });
+  }
 
-if (heroSection) {
-  preloadImages(slideshowImages, () => {
-    changeSlide(); // show first image immediately
-    setInterval(changeSlide, 5000); // change every 5s
-  });
-}
+  // ✅ Function to change background and quote
+  function changeSlide() {
+    heroSection.style.backgroundImage = `url('${slideshowImages[currentSlide]}')`;
+    if (quoteElement) {
+      quoteElement.textContent = slideshowQuotes[currentSlide];
+    }
+    currentSlide = (currentSlide + 1) % slideshowImages.length;
+  }
+
+  // ✅ Run slideshow after images are loaded
+  if (heroSection) {
+    preloadImages(slideshowImages, () => {
+      changeSlide(); // show first image + quote immediately
+      setInterval(changeSlide, 5000); // change every 5 seconds
+    });
+  }
+});
 
 
 // --- About Tabs Functionality ---
