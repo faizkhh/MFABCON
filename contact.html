@@ -63,30 +63,39 @@
       <div class="contact-form">
         <h2>Send us a Message</h2>
 
-        <form id="contactForm" action="https://formspree.io/f/xgvpgzja" method="POST">
-  <!-- <input type="hidden" name="_subject" value="New Contact Form Submission"> -->
+        <form id="contactForm" 
+      action="https://formspree.io/f/xgvpgzja" 
+      method="POST" 
+      enctype="multipart/form-data">
 
   <div class="form-group">
     <input type="text" name="name" placeholder="Your Name" required>
   </div>
+
   <div class="form-group">
     <input type="email" name="email" placeholder="Your Email" required>
   </div>
+
   <div class="form-group">
     <input type="text" name="subject" placeholder="Subject" required>
   </div>
+
   <div class="form-group">
     <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
   </div>
+
+  <!-- Optional file upload -->
+  <div class="form-group">
+    <label for="attachment">Attach File (optional)</label>
+    <input type="file" id="attachment" name="attachment" 
+           accept=".pdf,.jpg,.jpeg,.png,.doc,.docx">
+  </div>
+
   <button type="submit" class="btn btn-primary">Send Message</button>
 </form>
 
-<!-- Message Display -->
-<p id="formStatus" style="
-  margin-top:10px;
-  font-weight:500;
-  transition: opacity 0.5s ease;
-"></p>
+<!-- Status Message -->
+<p id="formStatus" style="margin-top:10px; font-weight:500; transition: opacity 0.5s ease;"></p>
 
 <script>
 document.getElementById("contactForm").addEventListener("submit", async function(e) {
@@ -95,6 +104,11 @@ document.getElementById("contactForm").addEventListener("submit", async function
   const form = e.target;
   const formData = new FormData(form);
   const status = document.getElementById("formStatus");
+
+  // show “sending” status
+  status.style.color = "#333";
+  status.style.opacity = "1";
+  status.innerHTML = "⏳ Sending your message...";
 
   try {
     const response = await fetch(form.action, {
@@ -105,34 +119,23 @@ document.getElementById("contactForm").addEventListener("submit", async function
 
     if (response.ok) {
       status.style.color = "green";
-      status.style.opacity = "1";
       status.innerHTML = "✅ Thank you! Your message has been sent successfully.";
-
-      // Reset form
       form.reset();
-
-      // Hide message after 3 seconds
-      setTimeout(() => {
-        status.style.opacity = "0";
-      }, 3000);
     } else {
-      // Try to parse any error message from Formspree
       const data = await response.json();
       throw new Error(data.error || "Unknown error");
     }
 
   } catch (error) {
     status.style.color = "red";
-    status.style.opacity = "1";
     status.innerHTML = "❌ Oops! Something went wrong. Please try again later.";
-
-    // Hide message after 3 seconds
-    setTimeout(() => {
-      status.style.opacity = "0";
-    }, 3000);
   }
+
+  // fade out message after 4 seconds
+  setTimeout(() => { status.style.opacity = "0"; }, 4000);
 });
 </script>
+
 
 
 
