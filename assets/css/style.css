@@ -1445,65 +1445,74 @@ header {
 
 
 /* Slider container */
-/* Slider container */
+/* ====== GENERAL SECTION STYLING ====== */
+.certifications-section,
+.partners-slider {
+  text-align: center;
+  padding: 70px 0;
+  background: #fff;
+}
+
+.certifications-section h2,
+.partners-slider h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #222;
+}
+
+/* ====== SLIDER STRUCTURE ====== */
 .slider-wrapper {
   overflow: hidden;
   width: 100%;
-  padding: 40px 0;
   position: relative;
+  padding: 20px 0;
 }
 
-/* Track that moves continuously */
 .slider-track {
   display: flex;
   gap: 40px;
-  animation: slideLoop 20s linear infinite;
+  will-change: transform;
+  transition: transform 1s ease-in-out;
 }
 
-/* Individual slides */
 .slide {
   flex: 0 0 auto;
   width: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: transform 0.5s ease;
+  transition: transform 0.6s ease, filter 0.6s ease;
 }
 
 .slide img {
   width: 100%;
-  display: block;
-  filter: grayscale(20%);
-  transition: transform 0.5s ease, filter 0.3s ease;
+  height: auto;
+  filter: grayscale(40%);
+  opacity: 0.8;
+  transition: transform 0.6s ease, filter 0.6s ease, opacity 0.6s ease;
+  will-change: transform, filter, opacity;
 }
 
-/* Zoom effect for center slide */
+/* Center slide zoom effect */
 .slide.active img {
-  transform: scale(1.2);
+  transform: scale(1.25);
   filter: grayscale(0%);
+  opacity: 1;
 }
 
-.slide img:hover {
-  filter: grayscale(0%);
+/* Responsive sizing */
+@media (max-width: 768px) {
+  .slide {
+    width: 100px;
+  }
+  .slider-track {
+    gap: 25px;
+  }
 }
 
-/* Section styling */
-.certifications-section, .partners-slider {
-  text-align: center;
-  padding: 60px 0;
-}
-
-.certifications-section h2, .partners-slider h2 {
-  font-size: 28px;
-  margin-bottom: 20px;
-  font-weight: 700;
-}
-
-/* Infinite scroll keyframes */
-@keyframes slideLoop {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); } /* adjust to slide halfway for smooth loop */
-}
 
 
 

@@ -159,33 +159,45 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+function setupZoomCarousel(sliderClass, interval = 2000) {
+  const wrapper = document.querySelector(`.${sliderClass}`);
+  const track = wrapper.querySelector('.slider-track');
+  const slides = Array.from(track.children);
 
-function setupZoomCarousel(sliderClass, interval = 1500) {
-  const sliderWrapper = document.querySelector(`.${sliderClass} .slider-wrapper`);
-  const track = sliderWrapper.querySelector('.slider-track');
-  const slides = track.querySelectorAll('.slide');
-  const slideWidth = slides[0].offsetWidth + 40; // slide width + margin
+  // Duplicate slides for seamless looping
+  slides.forEach(slide => track.appendChild(slide.cloneNode(true)));
+
   let index = 0;
+  const totalSlides = slides.length;
+  const slideWidth = slides[0].offsetWidth + 40;
 
-  // Set first slide active
-  slides[index].classList.add('active');
-
-  setInterval(() => {
-    // Remove active class
-    slides.forEach(slide => slide.classList.remove('active'));
-
-    // Move to next slide
-    index = (index + 1) % slides.length;
-
-    // Add active class to center slide
-    slides[index].classList.add('active');
-
-    // Move track
+  function moveCarousel() {
+    index++;
+    track.style.transition = 'transform 1s ease';
     track.style.transform = `translateX(-${index * slideWidth}px)`;
-  }, interval);
+
+    // Active center zoom effect
+    const allSlides = track.querySelectorAll('.slide');
+    allSlides.forEach(s => s.classList.remove('active'));
+    const activeIndex = (index + Math.floor(totalSlides / 2)) % totalSlides;
+    allSlides[activeIndex].classList.add('active');
+
+    // Reset position when reaching midpoint
+    if (index >= totalSlides) {
+      setTimeout(() => {
+        track.style.transition = 'none';
+        track.style.transform = 'translateX(0)';
+        index = 0;
+      }, 1000);
+    }
+  }
+
+  setInterval(moveCarousel, interval);
+  slides[0].classList.add('active'); // initial active
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  setupZoomCarousel('certSlider', 1500);
-  setupZoomCarousel('partnerSlider', 1500);
+  setupZoomCarousel('certSlider', 1800);
+  setupZoomCarousel('partnerSlider', 1800);
 });
+
