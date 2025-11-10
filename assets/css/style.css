@@ -1766,3 +1766,77 @@ header {
   to { opacity: 1; transform: translateY(0); }
 }
 
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  gap: 6px;
+}
+
+.logo img {
+  height: 65px;
+  width: auto;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+}
+
+.logo:hover img {
+  transform: scale(1.05);
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.25));
+}
+
+.company-name {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #222; /* change to #fff if on dark navbar */
+  opacity: 0.9;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.logo:hover .company-name {
+  color: #000; /* slightly darker on hover */
+  transform: scale(1.03);
+}
+
+
+.section-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px 0 20px;
+  text-align: center;
+}
+
+.section-logo img {
+  height: 80px;
+  width: auto;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: drop-shadow(0 2px 5px rgba(0,0,0,0.15));
+}
+
+.section-logo:hover img {
+  transform: scale(1.05);
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.25));
+}
+
+.section-company-name {
+  margin-top: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 17px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #222;
+  opacity: 0.95;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.section-logo:hover .section-company-name {
+  transform: scale(1.03);
+  color: #000;
+}
