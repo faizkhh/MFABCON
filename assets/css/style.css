@@ -1091,7 +1091,6 @@ header {
 }
 
 /* ==== Responsive Menu for Mobile ==== */
-/* ==== Responsive Menu for Mobile ==== */
 @media (max-width: 768px) {
   .site-nav {
     position: relative;
@@ -1512,9 +1511,6 @@ header {
     gap: 25px;
   }
 }
-
-
-
 
 
 
