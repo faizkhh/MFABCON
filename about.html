@@ -9,38 +9,54 @@
 </head>
 
 <body>
-
   <!-- Navbar -->
-  <header>
-    <nav class="site-nav">
-      <a class="logo" href="index.html">
-  <img src="assets/images/logo.png" alt="MFABCON Logo" />
-  <span class="company-name">MFABCON</span>
-</a>
+  <header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="index.html">
+      <img src="assets/images/logo.png" alt="MFABCON Logo" />
+      <span class="company-name">MFABCON</span>
+    </a>
 
-      <button class="nav-toggle">&#9776;</button>
-      <ul class="nav-links">
+    <nav class="site-nav">
+      <ul>
         <li><a href="index.html">Home</a></li>
 
-        <!-- Dropdown About Menu -->
         <li class="dropdown">
-          <a href="about.html" class="active">About Us <i class="fa-solid fa-angle-down"></i></a>
+          <a href="about.html" class="active">About <i class="fa fa-angle-down"></i></a>
           <ul class="dropdown-menu">
-            <li><a href="#about-mfa">About MFA</a></li>
-            <li><a href="#mission-vision">Mission, Vision & Ethics </a></li>
-            <li><a href="#health-safety">Health, Safety & Quality Assurance</a></li>
-            <li><a href="#news">News & Updates</a></li>
-            <li><a href="#Certification">Certification</a></li>
-            <li><a href="#partner"> Clients</a></li>
+            <li><a href="about.html#about-mfa">About MFA</a></li>
+            <li><a href="about.html#mission-vision">Mission, Vision & Ethics</a></li>
+            <li><a href="about.html#health-safety">Health, Safety & Quality Assurance</a></li>
+            <li><a href="about.html#news">News & Updates</a></li>
+            <li><a href="about.html#Certification">Certification</a></li>
+            <li><a href="about.html#partner">Clients</a></li>
           </ul>
         </li>
 
-        <li><a href="services.html">Services</a></li>
+        <li class="dropdown">
+          <a href="services.html">Services <i class="fa fa-angle-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="services.html#construction">Core Services</a></li>
+            <li><a href="services.html#Workforce">Workforce & Expertise</a></li>
+            <li><a href="services.html#project-Capabilities">Turnkey Project Capabilities</a></li>
+            <li><a href="services.html#project-delivery">Engineering & Project Delivery</a></li>
+            <li><a href="services.html#maintenance">Maintenance</a></li>
+          </ul>
+        </li>
+
         <li><a href="projects.html">Projects</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
-  </header>
+
+    <div class="header-actions">
+      <a href="tel:+966125787910" class="phone">+966 12 578 7910</a>
+      <button class="nav-toggle"><i class="fa fa-bars"></i></button>
+    </div>
+
+  </div>
+</header>
+
 
   <!-- Hero Section -->
   <section class="hero about-hero">
@@ -214,13 +230,7 @@
   </div>
 </section>
 
-
-
-
-
-
   <!-- Footer -->
-
 
   <footer class="site-footer">
     <div class="container footer-inner">
