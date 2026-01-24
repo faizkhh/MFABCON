@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Blogs — MFABCON</title>
+  <title>Knowledge Hub — MFABCON</title>
 
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -11,7 +11,8 @@
 
 <body>
 
-    <header class="site-header">
+  <!-- Header -->
+  <header class="site-header">
     <div class="container header-inner">
       <a class="logo" href="index.html">
         <img src="assets/images/logo.png" alt="MFA" />
@@ -21,27 +22,26 @@
         <ul>
           <li><a href="index.html">Home</a></li>
           <li class="dropdown">
-          <a href="about.html">About <i class="fa fa-angle-down"></i></a>
-          <ul class="dropdown-menu">
-            <li><a href="about.html#about-mfa">About MFA</a></li>
-            <li><a href="about.html#mission-vision">Mission, Vision & Ethics</a></li>
-            <li><a href="about.html#health-safety">Health, Safety & Quality Assurance</a></li>
-            <li><a href="about.html#news">News & Updates</a></li>
-            <li><a href="about.html#Certification">Certification</a></li>
-            <li><a href="about.html#partner">Clients</a></li>
-          </ul>
-        </li>
-
-        <li class="dropdown">
-          <a href="services.html">Services <i class="fa fa-angle-down"></i></a>
-          <ul class="dropdown-menu">
-            <li><a href="services.html#construction">Core Services</a></li>
-            <li><a href="services.html#Workforce">Workforce & Expertise</a></li>
-            <li><a href="services.html#project-Capabilities">Turnkey Project Capabilities</a></li>
-            <li><a href="services.html#project-delivery">Engineering & Project Delivery</a></li>
-            <li><a href="services.html#maintenance">Maintenance</a></li>
-          </ul>
-        </li>
+            <a href="about.html">About <i class="fa fa-angle-down"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="about.html#about-mfa">About MFA</a></li>
+              <li><a href="about.html#mission-vision">Mission, Vision & Ethics</a></li>
+              <li><a href="about.html#health-safety">Health, Safety & Quality Assurance</a></li>
+              <li><a href="about.html#news">News & Updates</a></li>
+              <li><a href="about.html#Certification">Certification</a></li>
+              <li><a href="about.html#partner">Clients</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="services.html">Services <i class="fa fa-angle-down"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="services.html#construction">Core Services</a></li>
+              <li><a href="services.html#Workforce">Workforce & Expertise</a></li>
+              <li><a href="services.html#project-Capabilities">Turnkey Project Capabilities</a></li>
+              <li><a href="services.html#project-delivery">Engineering & Project Delivery</a></li>
+              <li><a href="services.html#maintenance">Maintenance</a></li>
+            </ul>
+          </li>
           <li><a href="projects.html">Projects</a></li>
           <li><a href="blogs.html" class="blogs">Blogs</a></li>
           <li><a href="contact.html">Contact</a></li>
@@ -54,6 +54,23 @@
     </div>
   </header>
 
+  <!-- Featured Brochure -->
+  <section class="brochure-section">
+    <div class="container">
+      <h2 class="section-title">Company Brochure</h2>
+      <p>Download or view our latest company brochure to learn more about MFABCON's services and capabilities.</p>
+      <div class="brochure-actions">
+        <a href="assets/docs/company-brochure.pdf" class="btn" download>
+          <i class="fa fa-download"></i> Download Brochure
+        </a>
+        <a href="assets/docs/company-brochure.pdf" class="btn" target="_blank">
+          <i class="fa fa-eye"></i> View PDF
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Knowledge Hub / Blogs -->
   <section class="blogs-section">
     <div class="container">
       <h1 class="section-title">Knowledge Hub / Blogs</h1>
@@ -65,22 +82,43 @@
           <img src="assets/images/blog1.jpg" alt="Blog Image">
           <h3>Importance of Quality in Construction</h3>
           <p>A quick overview of how quality assurance shapes successful project delivery.</p>
-
           <div class="blog-actions">
             <a href="blog1.html" class="btn">Read Blog</a>
-            <a href="assets/docs/company-brochure.pdf" class="btn" download>Download Brochure</a>
-            <a href="assets/docs/company-brochure.pdf" target="_blank" class="btn">View PDF</a>
           </div>
         </div>
 
-        <!-- You can duplicate cards for more blogs -->
+        <!-- Blog Card 2 -->
+        <div class="blog-card">
+          <img src="assets/images/blog2.jpg" alt="Blog Image">
+          <h3>Innovative Construction Technologies</h3>
+          <p>Explore modern techniques improving construction efficiency and safety.</p>
+          <div class="blog-actions">
+            <a href="blog2.html" class="btn">Read Blog</a>
+          </div>
+        </div>
+
+        <!-- Blog Card 3 -->
+        <div class="blog-card">
+          <img src="assets/images/blog3.jpg" alt="Blog Image">
+          <h3>Workforce Training & Development</h3>
+          <p>How continuous workforce development enhances project outcomes.</p>
+          <div class="blog-actions">
+            <a href="blog3.html" class="btn">Read Blog</a>
+          </div>
+        </div>
+
+        <!-- You can duplicate cards to add more blogs -->
 
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <!-- paste your standard footer here -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 MFABCON. All rights reserved.</p>
+    </div>
+  </footer>
 
 </body>
 </html>
